@@ -37,4 +37,5 @@ apt-get -y remove pidgin
 apt-get -y remove transmission-gtk
 
 
-
+# System settings: default to US Eastern time for seminar.
+timedatectl set-timezone America/New_York
