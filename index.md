@@ -3,10 +3,8 @@ title: "HMT editors' virtual machine (summer 2015)"
 layout: page
 ---
 
-How to configure and use the 2015 HMT editors' virtual machine.  
 
-
-## About, and prerequisites ##
+## About `vm2015` and prerequisites to use it##
 
 `vm2015` defines a virtual machine running Ubuntu 14.04 with a LXDE GUI, and including all the software necessary to edit and validate contributions to the Homer Multitext project.  It uses Vagrant to define a virtual machine you can run with  VirtualBox.  The two prerequisites for running `vm2015` are therefore:
 
