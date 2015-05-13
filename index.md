@@ -31,3 +31,6 @@ The project github repository is <https://github.com/homermultitext/vm2015.git>.
 
 
 
+## Using the VM ##
+
+- switching keyboard layouts
