@@ -21,16 +21,30 @@ The project github repository is <https://github.com/homermultitext/vm2015.git>.
 > Your machine must be able to run a 64-bit VM.  Some computers have BIOS settings that prohibit this.  If that happens, you'll have to change your BIOS settings to allow the 64-bit VM to run.
 
 
+To install the full suite of tools for HMT project editing, run
+
+    refresh-hmt.sh
+
 
 ## Configuration
 
 
 - how to change the time zone.  (This can be important, since version control repositories depend on reliable time-stamps!)
 - how to change the keyboard layout.
-- `refresh-hmt.sh`: one-time set up and refresh
+- `refresh-hmt.sh`: to refresh/update your HMT tool suite
+- how to configure your LXTerminal
+- how to install Alpheios plugin for Firefox
 
 
 
 ## Using the VM ##
 
 - switching keyboard layouts
+
+What's here:
+
+- for markup, `xmlcopyeditor`
+- for markdown, `ReText`.  Note "Preview" toggle to edit/view formatted.
+- for text formatting, `pandoc`
+
+Tools for HMT project:  
