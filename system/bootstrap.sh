@@ -37,6 +37,9 @@ apt-get install -y flex-old
 ### Configure system and user settings        ###########
 #########################################################
 
+# Add polytonic Greek layout:
+cp /vagrant/system/gr.new /usr/share/X11/xkb/symobls/gr
+
 # System settings: default to US Eastern time for seminar:
 timedatectl set-timezone America/New_York
 
