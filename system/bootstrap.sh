@@ -1,28 +1,53 @@
 #!/usr/bin/env bash
 
-
-# Repository for 21st century version of gradle:  
+# Repository for an early-21st-century version of gradle:  
 add-apt-repository ppa:cwchien/gradle
 apt-get update
 
 
+#########################################################
+### Install packages required for HMT editing ###########
+#########################################################
+
+# Clean up any catastrophic reformatting that
+# 'git clone' could introduce on a Windows box:
+apt-get install -y dos2unix
+/usr/bin/dos2unix /vagrant/system/*sh
+/usr/bin/dos2unix /vagrant/system/dotprofile
+/usr/bin/dos2unix /vagrant/scripts/*sh
+
 # version control
 apt-get install -y git
-GIT=`which git`
-echo Installed git at $GIT
 
-
-# XML editor
-apt-get install -y xmlcopyeditor
-
-
-# JDK dev bundle
+# JDK bundle
 apt-get install -y openjdk-7-jdk
 apt-get -y install groovy
 apt-get -y install gradle
 
+# XML editor
+apt-get install -y xmlcopyeditor
 
-# Remove unneeded apps:
+# Needed for building morpheus
+apt-get install -y subversion
+apt-get install -y flex-old
+
+
+
+#########################################################
+### Configure system and user settings        ###########
+#########################################################
+
+# System settings: default to US Eastern time for seminar:
+timedatectl set-timezone America/New_York
+
+# Set up vagrant user account:
+cp /vagrant/system/dotprofile /home/vagrant/.profile
+chown vagrant:vagrant /home/vagrant/.profile
+if [ ! -e "/home/vagrant/Desktop/shared" ]; then
+    ln -s /vagrant /home/vagrant/Desktop/shared
+fi
+
+# Remove unneeded apps from base machine:
 apt-get -y remove transmission
 apt-get -y remove sylpheed
 apt-get -y remove mtpaint
@@ -36,6 +61,3 @@ apt-get -y remove gnumeric
 apt-get -y remove pidgin
 apt-get -y remove transmission-gtk
 
-
-# System settings: default to US Eastern time for seminar.
-timedatectl set-timezone America/New_York
