@@ -1,0 +1,35 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            VM for Homer Multitext project editors
+tagline:          'A complete system for editing and validating HMT work'
+description:      'Summmer, 2015, version of the HMT project VM for editors'
+baseurl: '/vm2015/'
+
+
+
+author:
+  name:           'Neel Smith'
+ 
+paginate:         5
+
+links:
+  - title: HMT on github
+    url: http://homermultitext.github.io/
+    external: true
+  - title: HMT editors' group
+    url: http://hmteditors.github.io/
+    external: true
+  - title: HMT home page
+    url: http://www.homermultitext.org/
+    external: true
+  - title: Github source for this site
+    url: https://github.com/homermultitext/vm2015
+    external: true
+
+   
