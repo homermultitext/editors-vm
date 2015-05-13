@@ -32,6 +32,14 @@ apt-get install -y subversion
 apt-get install -y flex-old
 
 
+#########################################################
+### Markdown bundle                                                               
+#########################################################
+
+apt-get -y install mdpress
+apt-get -y install retext
+apt-get -y install pandoc
+
 
 #########################################################
 ### Configure system and user settings        ###########
