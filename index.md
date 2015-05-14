@@ -48,3 +48,5 @@ What's here:
 - for text formatting, `pandoc`
 
 Tools for HMT project:  
+
+- Viewing XML editions scholia in Firefox with beautiful CSS
