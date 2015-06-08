@@ -46,7 +46,7 @@ apt-get -y install pandoc
 #########################################################
 
 # Add polytonic Greek layout:
-cp /vagrant/system/gr.new /usr/share/X11/xkb/symobls/gr
+cp /vagrant/system/gr.new /usr/share/X11/xkb/symbols/gr
 
 # System settings: default to US Eastern time for seminar:
 timedatectl set-timezone America/New_York
