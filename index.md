@@ -28,9 +28,8 @@ To install the full suite of tools for HMT project editing, run
 
 ## Configuration
 
-
+- how to [change or add keyboard layouts](keyboard).
 - how to change the time zone.  (This can be important, since version control repositories depend on reliable time-stamps!)
-- how to change the keyboard layout.
 - `refresh-hmt.sh`: to refresh/update your HMT tool suite
 - how to configure your LXTerminal
 - how to install Alpheios plugin for Firefox
