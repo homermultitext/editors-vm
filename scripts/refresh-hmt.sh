@@ -50,6 +50,22 @@ else
 fi
 
 
+
+
+if [ -d "/vagrant/lexmapping" ]; then
+    echo "Checking for updates to modern orthographic equivalents"
+    cd /vagrant/lexmapping
+    $GIT pull
+else
+    echo "Installing modern orthographic equivalents repository"
+    cd /vagrant
+    echo  Running  $GIT clone https://github.com/homermultitext/lexmapping.git
+    $GIT clone https://github.com/homermultitext/lexmapping.git
+fi
+
+
+
+
 if [ -d "/vagrant/morpheus" ]; then
     echo "Checking for updates to morphological stems"
     cd /vagrant/morpheus
