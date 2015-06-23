@@ -13,7 +13,7 @@ The ribbon at the bottom of the Desktop screen has a control panel for changing 
 
 
 
-You will see a dialog box like the one below listing any installed keyboard layouts.  To add a new layout, click on the *Add* button, and select from the list.
+You will see a dialog box like the one below listing any installed keyboard layouts.  Make that "Keep system layouts" is unchecked, then click on the *Add* button, and select from the list.
 ![panel]
 
 [popupmenu]: ../imgs/khandler.png
