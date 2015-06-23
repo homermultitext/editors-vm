@@ -1,9 +1,7 @@
 ---
-title: Polytonic Greek keyboard layout
+title: Adding keyboard layouts
 layout: page
 ---
-
-`vm2015` includes  a polytonic Greek keyboard (available with documentation [here](http://www.frame-poythress.org/keyboard-entry-of-polytonic-greek-and-biblical-hebrew-in-gnulinux-2014/)).  For a summary of key mappings, you can use [this chart](http://49ft7fdv9kp7kqhm12yk1d17.wpengine.netdna-cdn.com/wp-content/uploads/2014/07/2007KeyboardGreek.pdf).  Note that in this system, you type accents and breathings *before* the vowel they fall on.
 
 
 ## Adding other keyboard input methods ##
@@ -25,3 +23,10 @@ You will see a dialog box like the one below listing any installed keyboard layo
 
 
 You can arrange multiple layouts in any order you like.  
+
+
+## Polytonic Greek keyboard ##
+
+
+`vm2015` includes  a polytonic Greek keyboard (available with documentation [here](http://www.frame-poythress.org/keyboard-entry-of-polytonic-greek-and-biblical-hebrew-in-gnulinux-2014/)).  For a summary of key mappings, you can use [this chart](http://49ft7fdv9kp7kqhm12yk1d17.wpengine.netdna-cdn.com/wp-content/uploads/2014/07/2007KeyboardGreek.pdf).  Note that in this system, you type accents and breathings *before* the vowel they fall on.
+
