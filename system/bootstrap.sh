@@ -19,6 +19,10 @@ apt-get install -y dos2unix
 # version control
 apt-get install -y git
 
+# an easy editor
+apt-get install -y nano
+
+
 # JDK bundle
 apt-get install -y openjdk-7-jdk
 apt-get -y install groovy
