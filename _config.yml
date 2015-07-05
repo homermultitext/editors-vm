@@ -1,5 +1,7 @@
 # Dependencies
 markdown:         redcarpet
+redcarpet:
+ extensions: ["fenced_code_blocks", "autolink", "tables"]
 pygments:         true
 
 # Permalinks
@@ -19,6 +21,9 @@ author:
 paginate:         5
 
 links:
+  - title: Documentation
+    url: http://homermultitext.github.io/hmt-docs/vm/
+    external: true
   - title: HMT on github
     url: http://homermultitext.github.io/
     external: true
