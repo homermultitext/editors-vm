@@ -16,6 +16,11 @@ apt-get install -y dos2unix
 /usr/bin/dos2unix /vagrant/system/dotprofile
 /usr/bin/dos2unix /vagrant/scripts/*sh
 
+# and add bomstrip utils in case XML Copy Editor
+# or evil Windows software tries to insert a BOM
+# in your editorial work:
+apt-get install -y bomstrip
+
 # version control
 apt-get install -y git
 
