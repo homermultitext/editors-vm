@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-# Repository for an early-21st-century version of gradle:  
+
+#
+# Repository for an early-21st-century version of gradle:
 add-apt-repository ppa:cwchien/gradle
 apt-get update
 
@@ -42,7 +44,7 @@ apt-get install -y flex-old
 
 
 #########################################################
-### Markdown bundle                                                               
+### Markdown bundle
 #########################################################
 
 apt-get -y install mdpress
@@ -81,3 +83,13 @@ apt-get -y remove gnumeric
 apt-get -y remove pidgin
 apt-get -y remove transmission-gtk
 
+
+# Add Atom:
+echo "Downloading .deb file for Atom"
+/usr/bin/wget https://github.com/atom/atom/releases/download/v1.0.11/atom-amd64.deb 2> /tmp/atom-log.txt
+echo "Download complete, installing Atom"
+/usr/bin/dpkg --install atom-amd64.deb
+echo "Atom installed. "
+echo "You can safely ignore any error messages about 'dependency problems - leaving unconfigured'."
+echo "This is only because we're running a newer version of Ubuntu than Atom expects."
+echo "You should find an icon for Atom in the 'Programming' section of your start menu."
