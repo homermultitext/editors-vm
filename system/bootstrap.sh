@@ -84,12 +84,21 @@ apt-get -y remove pidgin
 apt-get -y remove transmission-gtk
 
 
-# Add Atom:
-echo "Downloading .deb file for Atom"
-/usr/bin/wget https://github.com/atom/atom/releases/download/v1.0.11/atom-amd64.deb 2> /tmp/atom-log.txt
-echo "Download complete, installing Atom"
-/usr/bin/dpkg --install atom-amd64.deb
-echo "Atom installed. "
-echo "You can safely ignore any error messages about 'dependency problems - leaving unconfigured'."
-echo "This is only because we're running a newer version of Ubuntu than Atom expects."
-echo "You should find an icon for Atom in the 'Programming' section of your start menu."
+
+if [ ! -e atom-amd64.deb ]
+    then
+      # Add Atom:
+      echo "Downloading .deb file for Atom"
+      /usr/bin/wget https://github.com/atom/atom/releases/download/v1.0.11/atom-amd64.deb 2> /tmp/atom-log.txt
+      echo "Download complete, installing Atom"
+      /usr/bin/dpkg --install atom-amd64.deb
+      echo "Atom installed. "
+fi
+
+
+if [ ! -e /usr/share/backgrounds/proclus-opening.jpg ]
+    then
+    echo "Download bg image"
+    /usr/bin/wget http://beta.hpcc.uh.edu/hmt/data/proclus-opening.jpg
+    /bin/mv proclus-opening.jpg /usr/share/backgrounds
+fi
