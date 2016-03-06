@@ -60,7 +60,7 @@ apt-get -y install pandoc
 cp /vagrant/system/dotprofile /home/vagrant/.profile
 chown vagrant:vagrant /home/vagrant/.profile
 
-cp /vagrant/system/planck-dock1-settings /home/vagrant/.config/plank/dock1/settings
+cp /vagrant/system/plank-dock1-settings /home/vagrant/.config/plank/dock1/settings
 chown vagrant:vagrant /home/vagrant/.config/plank/dock1/settings
 
 cp /vagrant/system/plank-dock1-launchers/*.dockitem /home/vagrant/.config/plank/dock1/launchers
