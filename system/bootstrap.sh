@@ -39,8 +39,14 @@ apt-get -y install gradle
 apt-get install -y xmlcopyeditor
 
 # Needed for building morpheus
-apt-get install -y subversion
-apt-get install -y flex-old
+#apt-get install -y subversion
+#apt-get install -y flex-old
+
+
+#########################################################
+### Web
+apt-get -y install firefox
+## alpheios?
 
 
 #########################################################
@@ -57,7 +63,7 @@ apt-get -y install pandoc
 #########################################################
 
 # Add polytonic Greek layout:
-cp /vagrant/system/gr.new /usr/share/X11/xkb/symbols/gr
+#cp /vagrant/system/gr.new /usr/share/X11/xkb/symbols/gr
 
 # System settings: default to US Eastern time for seminar:
 timedatectl set-timezone America/New_York

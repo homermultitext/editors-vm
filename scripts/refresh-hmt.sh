@@ -5,7 +5,7 @@ GIT=`which git`
 echo git installed at $GIT
 
 # This script is repsonsible for:
-# 
+#
 # 1. One-time build of morpheus
 # 2. Cloning or updating HMT git repositories needed for editing.
 #
@@ -64,25 +64,13 @@ else
 fi
 
 
-
-
-if [ -d "/vagrant/morpheus" ]; then
-    echo "Checking for updates to morphological stems"
-    cd /vagrant/morpheus
+if [ -d "/vagrant/greeklang" ]; then
+    echo "Checking for updates to greek morphology system"
+    cd /vagrant/greeklang
     $GIT pull
 else
-    echo "Installing morphological system"
+    echo "Installing greek morphology system"
     cd /vagrant
-
-    echo  Running   $GIT clone https://github.com/homermultitext/morpheus.git
-    $GIT clone https://github.com/homermultitext/morpheus.git
-    cd /vagrant/morpheus
-    sh build_linux.sh
-
-    cd /vagrant/morpheus/src/morphlib/
-    make morphlib.a
-
-    cd /vagrant/morpheus
-    sh build_linux.sh
-
+    echo  Running  $GIT clone https://github.com/neelsmith/greeklang.git
+    $GIT clone https://github.com/neelsmith/greeklang.git
 fi
