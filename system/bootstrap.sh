@@ -55,10 +55,12 @@ apt-get -y install pandoc
 # System settings: default to US Eastern time for seminar:
 #timedatectl set-timezone America/New_York
 
-
 # Set up vagrant user account:
 cp /vagrant/system/dotprofile /home/vagrant/.profile
 chown vagrant:vagrant /home/vagrant/.profile
+
+cp /vagrant/system/mimeapps.list /home/vagrant/.config
+chown vagrant:vagrant /home/vagrant/.config/mimeapps.list
 
 rm /home/vagrant/.config/plank/dock1/launchers/*.dockitem
 cp /vagrant/system/plank-dock1-launchers/*.dockitem /home/vagrant/.config/plank/dock1/launchers
@@ -82,3 +84,5 @@ if [ ! -e /usr/share/backgrounds/proclus-opening.jpg ]
     /usr/bin/wget http://beta.hpcc.uh.edu/hmt/data/proclus-opening.jpg 2> /tmp/proclus-log.txt
     /bin/mv proclus-opening.jpg /usr/share/backgrounds
 fi
+
+# http://downloads.lightbend.com/scala/2.11.7/scala-2.11.7.deb ?
