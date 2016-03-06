@@ -49,6 +49,12 @@ apt-get -y install pandoc
 
 
 #########################################################
+### Stuttgart Finite State Transducing engine
+#########################################################
+
+apt-get -y install sfst
+
+#########################################################
 ### Configure system and user settings        ###########
 #########################################################
 
@@ -67,7 +73,7 @@ cp /vagrant/system/plank-dock1-launchers/*.dockitem /home/vagrant/.config/plank/
 chown vagrant:vagrant /home/vagrant/.config/plank/dock1/launchers/*.dockitem
 
 
-if [ ! -e atom-amd64.deb ]
+if [ ! -e /usr/bin/atom ]
     then
       # Add Atom:
       echo "Downloading .deb file for Atom"
