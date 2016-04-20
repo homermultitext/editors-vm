@@ -10,14 +10,14 @@ permalink:        pretty
 # Setup
 title:            VM for Homer Multitext project editors
 tagline:          'A complete system for editing and validating HMT work'
-description:      'Summmer, 2015, version of the HMT project VM for editors'
-baseurl: '/vm2015/'
+description:      'Current version of the HMT project VM for editors'
+baseurl: '/editors-vm/'
 
 
 
 author:
   name:           'Neel Smith'
- 
+
 paginate:         5
 
 links:
@@ -34,7 +34,5 @@ links:
     url: http://www.homermultitext.org/
     external: true
   - title: Github source for this site
-    url: https://github.com/homermultitext/vm2015
+    url: https://github.com/homermultitext/editors-vm
     external: true
-
-   
