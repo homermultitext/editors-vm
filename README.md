@@ -1,18 +1,13 @@
-# vm2015
+# editors-vm
 
-In this directory, the file `Vagrantfile` (along with accompanying scripts in the `system` and `scripts` directories) defines the virtual machine for HMT editorial work.  You should **not** edit or alter those files.
+In this repository, the file `Vagrantfile`, along with accompanying scripts in the `system` and `scripts` directories, defines the virtual machine (VM) used by editors contributing to the Homer Multitext project (HMT).  You should **not** edit or alter those files.
 
-When you run the virtual machine, this directory will be shared between the VM and your host computer.  Feel free to add or modify other material here, either in the VM or in your host computer..
+When you run the virtual machine, this directory will be shared between the VM and your host computer.  Feel free to add or modify other material here, either in the VM or in your host computer.
 
-This version is the current devlopment version, planned for release in time for summer, 2016, research on HMT.
-
-
-## Current status ##
-
-Spring 2016 branch, using elementary OS as base OS.
+This release of the HMT editors' virtual machine uses a free Linux operating system, [elementary OS](https://elementary.io/).
 
 
 ## Notes for docs
 
-Up to date instructions for installation of the development version of the VM are on line here: 
-<http://homermultitext.github.io/hmt-docs/vm/vm2016/>
+Instructions for installing and using the HMT editors' VM are on line here:
+<http://homermultitext.github.io/hmt-docs/vm/>
