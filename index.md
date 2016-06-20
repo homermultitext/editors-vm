@@ -4,11 +4,11 @@ layout: page
 ---
 
 
-`editors-vm` defines a virtual machine  including all the software necessary to edit and validate contributions to the Homer Multitext project.  In the 2015-2016 academic year, all editors should use this VM to validate and verify their work.
+The `editors-vm` repository defines a virtual machine including all the software necessary to edit and validate contributions to the Homer Multitext project.  All editors should use the tools in this VM to validate and verify their work.
 
 Documentation is available at <http://homermultitext.github.io/hmt-docs/vm/>.
 
 
 ## Technical summary ##
 
-The project uses Vagrant to define a virtual machine you can run with  VirtualBox.  The current VM is a 64-bit machine running Ubuntu 14.04 with a LXDE GUI.  Before beginning of intensive work in summer, 2016, we will switch to a base machine running Elementary OS.
+The project uses [Vagrant](https://www.vagrantup.com/) to define a virtual machine you can run with  [VirtualBox](https://www.virtualbox.org/wiki/Downloads).  The current VM is a 64-bit machine using [elementary OS ](https://elementary.io/) for its operating system.
