@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-
 #
-# Repository for an early-21st-century version of gradle:
+# Add repository for an early-21st-century version of gradle:
 add-apt-repository ppa:cwchien/gradle
 apt-get update
 
@@ -26,10 +25,6 @@ apt-get install -y bomstrip
 # version control
 apt-get install -y git
 
-# an easy editor
-apt-get install -y nano
-
-
 # JDK bundle
 apt-get install -y openjdk-7-jdk
 apt-get -y install groovy
@@ -38,9 +33,10 @@ apt-get -y install gradle
 # XML editor
 apt-get install -y xmlcopyeditor
 
-# Needed for building morpheus
-apt-get install -y subversion
-apt-get install -y flex-old
+#########################################################
+### Web
+apt-get -y install firefox
+## alpheios must be manually installed?
 
 
 #########################################################
@@ -53,43 +49,46 @@ apt-get -y install pandoc
 
 
 #########################################################
+### Stuttgart Finite State Transducing engine
+#########################################################
+
+apt-get -y install sfst
+
+#########################################################
 ### Configure system and user settings        ###########
 #########################################################
 
-# Add polytonic Greek layout:
-cp /vagrant/system/gr.new /usr/share/X11/xkb/symbols/gr
-
 # System settings: default to US Eastern time for seminar:
-timedatectl set-timezone America/New_York
+#timedatectl set-timezone America/New_York
 
 # Set up vagrant user account:
 cp /vagrant/system/dotprofile /home/vagrant/.profile
 chown vagrant:vagrant /home/vagrant/.profile
-if [ ! -e "/home/vagrant/Desktop/shared" ]; then
-    ln -s /vagrant /home/vagrant/Desktop/shared
+
+cp /vagrant/system/mimeapps.list /home/vagrant/.config
+chown vagrant:vagrant /home/vagrant/.config/mimeapps.list
+
+rm /home/vagrant/.config/plank/dock1/launchers/*.dockitem
+cp /vagrant/system/plank-dock1-launchers/*.dockitem /home/vagrant/.config/plank/dock1/launchers
+chown vagrant:vagrant /home/vagrant/.config/plank/dock1/launchers/*.dockitem
+
+
+if [ ! -e /usr/bin/atom ]
+    then
+      # Add Atom:
+      echo "Downloading .deb file for Atom"
+      /usr/bin/wget https://github.com/atom/atom/releases/download/v1.0.11/atom-amd64.deb 2> /tmp/atom-log.txt
+      echo "Download complete, installing Atom"
+      /usr/bin/dpkg --install atom-amd64.deb
+      echo "Atom installed. "
 fi
 
-# Remove unneeded apps from base machine:
-apt-get -y remove transmission
-apt-get -y remove sylpheed
-apt-get -y remove mtpaint
-apt-get -y remove simple-scan
-apt-get -y remove audacious
-apt-get -y remove guvcview
-apt-get -y remove gnome-mplayer
-apt-get -y remove xfburn
-apt-get -y remove abiword
-apt-get -y remove gnumeric
-apt-get -y remove pidgin
-apt-get -y remove transmission-gtk
 
+if [ ! -e /usr/share/backgrounds/proclus-opening.jpg ]
+    then
+    echo "Downloading bg image of Venetus A MS"
+    /usr/bin/wget http://beta.hpcc.uh.edu/hmt/data/proclus-opening.jpg 2> /tmp/proclus-log.txt
+    /bin/mv proclus-opening.jpg /usr/share/backgrounds
+fi
 
-# Add Atom:
-echo "Downloading .deb file for Atom"
-/usr/bin/wget https://github.com/atom/atom/releases/download/v1.0.11/atom-amd64.deb 2> /tmp/atom-log.txt
-echo "Download complete, installing Atom"
-/usr/bin/dpkg --install atom-amd64.deb
-echo "Atom installed. "
-echo "You can safely ignore any error messages about 'dependency problems - leaving unconfigured'."
-echo "This is only because we're running a newer version of Ubuntu than Atom expects."
-echo "You should find an icon for Atom in the 'Programming' section of your start menu."
+# http://downloads.lightbend.com/scala/2.11.7/scala-2.11.7.deb ?

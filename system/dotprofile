@@ -1,7 +1,4 @@
-export MORPHLIB=/vagrant/morpheus/dist/stemlib
-export PATH=/vagrant/morpheus/bin:/vagrant/scripts:$PATH
 
-export EDITOR=/bin/nano
+export PATH=/vagrant/scripts:$PATH
 
-# Set keyboard layout:
-setxkbmap -layout "us"
+export EDITOR=/usr/bin/atom

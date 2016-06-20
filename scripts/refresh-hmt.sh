@@ -4,11 +4,9 @@
 GIT=`which git`
 echo git installed at $GIT
 
-# This script is repsonsible for:
+# This script is repsonsible for cloning or updating all HMT git repositories
+# needed for editing.
 # 
-# 1. One-time build of morpheus
-# 2. Cloning or updating HMT git repositories needed for editing.
-#
 # It's up to individual editors to maintain their own repository
 # for editorial content.
 #
@@ -50,8 +48,6 @@ else
 fi
 
 
-
-
 if [ -d "/vagrant/lexmapping" ]; then
     echo "Checking for updates to modern orthographic equivalents"
     cd /vagrant/lexmapping
@@ -64,25 +60,24 @@ else
 fi
 
 
-
-
-if [ -d "/vagrant/morpheus" ]; then
-    echo "Checking for updates to morphological stems"
-    cd /vagrant/morpheus
+if [ -d "/vagrant/greeklang" ]; then
+    echo "Checking for updates to Kanōnes Greek morphology system"
+    cd /vagrant/greeklang
     $GIT pull
 else
-    echo "Installing morphological system"
+    echo "Installing Kanōnes Greek morphology system"
     cd /vagrant
+    echo  Running  $GIT clone https://github.com/neelsmith/greeklang.git
+    $GIT clone https://github.com/neelsmith/greeklang.git
+fi
 
-    echo  Running   $GIT clone https://github.com/homermultitext/morpheus.git
-    $GIT clone https://github.com/homermultitext/morpheus.git
-    cd /vagrant/morpheus
-    sh build_linux.sh
-
-    cd /vagrant/morpheus/src/morphlib/
-    make morphlib.a
-
-    cd /vagrant/morpheus
-    sh build_linux.sh
-
+if [ -d "/vagrant/hmt-lexicon" ]; then
+    echo "Checking for updates to HMT morphological lexicon"
+    cd /vagrant/hmt-lexicon
+    $GIT pull
+else
+    echo "Installing HMT morphological lexicon"
+    cd /vagrant
+    echo  Running  $GIT clone https://github.com/homermultitext/hmt-lexicon.git
+    $GIT clone https://github.com/homermultitext/hmt-lexicon.git
 fi
