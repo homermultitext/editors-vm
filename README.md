@@ -1,4 +1,4 @@
-# editors-vm
+# editors-vm (updated for summer, 2016, work on HMT)
 
 In this repository, the file `Vagrantfile`, along with accompanying scripts in the `system` and `scripts` directories, defines the virtual machine (VM) used by editors contributing to the Homer Multitext project (HMT).  You should **not** edit or alter those files.
 
