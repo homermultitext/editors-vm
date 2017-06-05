@@ -26,17 +26,15 @@ apt-get install -y bomstrip
 apt-get install -y git
 
 # JDK bundle
-apt-get install -y openjdk-7-jdk
+apt-get install -y openjdk-8-jdk
 apt-get -y install groovy
 apt-get -y install gradle
 
-# XML editor
-apt-get install -y xmlcopyeditor
 
 #########################################################
 ### Web
 apt-get -y install firefox
-## alpheios must be manually installed?
+## alpheios must be manually installed
 
 
 #########################################################
@@ -44,7 +42,6 @@ apt-get -y install firefox
 #########################################################
 
 apt-get -y install mdpress
-apt-get -y install retext
 apt-get -y install pandoc
 
 
@@ -84,11 +81,10 @@ if [ ! -e /usr/bin/atom ]
 fi
 
 
-if [ ! -e /usr/share/backgrounds/proclus-opening.jpg ]
-    then
-    echo "Downloading bg image of Venetus A MS"
-    /usr/bin/wget http://beta.hpcc.uh.edu/hmt/data/proclus-opening.jpg 2> /tmp/proclus-log.txt
-    /bin/mv proclus-opening.jpg /usr/share/backgrounds
-fi
 
-# http://downloads.lightbend.com/scala/2.11.7/scala-2.11.7.deb ?
+#########################################################
+### Scala suite ###########
+#########################################################
+
+/usr/bin/wget https://downloads.lightbend.com/scala/2.11.11/scala-2.11.11.tgz 2> /tmp/scala-dl-log.txt
+#
