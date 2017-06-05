@@ -100,4 +100,5 @@ apt update
 apt install atom
 
 GIT=`which git`
+cd /vagrant
 $GIT clone https://github.com/neelsmith/atomic-tei.git
