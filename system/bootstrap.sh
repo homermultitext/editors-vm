@@ -26,7 +26,7 @@ apt-get install -y bomstrip
 apt-get install -y git
 
 # JDK bundle
-apt-get install -y openjdk-8-jdk
+apt-get install -y openjdk-7-jdk
 apt-get -y install groovy
 apt-get -y install gradle
 
@@ -70,18 +70,6 @@ cp /vagrant/system/plank-dock1-launchers/*.dockitem /home/vagrant/.config/plank/
 chown vagrant:vagrant /home/vagrant/.config/plank/dock1/launchers/*.dockitem
 
 
-if [ ! -e /usr/bin/atom ]
-    then
-      # Add Atom:
-      echo "Downloading .deb file for Atom"
-      /usr/bin/wget https://github.com/atom/atom/releases/download/v1.0.11/atom-amd64.deb 2> /tmp/atom-log.txt
-      echo "Download complete, installing Atom"
-      /usr/bin/dpkg --install atom-amd64.deb
-      echo "Atom installed. "
-fi
-
-
-
 #########################################################
 ### Scala suite ###########
 #########################################################
@@ -101,3 +89,15 @@ echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
 apt-get update
 apt-get install sbt
+
+
+
+
+
+# Atom
+add-apt-repository ppa:webupd8team/atom
+apt update
+apt install atom
+
+GIT=`which git`
+$GIT clone https://github.com/neelsmith/atomic-tei.git
