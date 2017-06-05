@@ -86,5 +86,17 @@ fi
 ### Scala suite ###########
 #########################################################
 
+# scala itself:
 /usr/bin/wget https://downloads.lightbend.com/scala/2.11.11/scala-2.11.11.tgz 2> /tmp/scala-dl-log.txt
-#
+/bin/tar  -zxvf scala-2.11.11.tgz
+/bin/ln  scala-2.11.11 scala
+
+# sbt
+#/usr/bin/wget https://github.com/sbt/sbt/releases/download/v0.13.15/sbt-0.13.15.tgz
+#/bin/tar  -zxvf sbt-0.13.15.tgz
+
+
+echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+apt-get update
+apt-get install sbt
