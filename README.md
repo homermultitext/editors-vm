@@ -1,4 +1,4 @@
-# editors-vm (updated for summer, 2016, work on HMT)
+# editors-vm
 
 In this repository, the file `Vagrantfile`, along with accompanying scripts in the `system` and `scripts` directories, defines the virtual machine (VM) used by editors contributing to the Homer Multitext project (HMT).  You should **not** edit or alter those files.
 
@@ -6,6 +6,9 @@ When you run the virtual machine, this directory will be shared between the VM a
 
 This release of the HMT editors' virtual machine uses a free Linux operating system, [elementary OS](https://elementary.io/).
 
+## Version
+
+The `summer2017` branch of this repository contains current development work on the VM to be used at the HMT summer seminar at the Center for Hellenic Studies in the summer of 2017.
 
 ## Notes for docs
 
