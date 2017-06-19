@@ -1,7 +1,7 @@
   tablr:
     csvEditor:
       columnDelimiter: "#"
-      comment: "!#"
+      comment: "#!"
       eof: true
     supportedCsvExtensions: [
       "csv"
