@@ -79,7 +79,7 @@ if [ ! -e /home/vagrant/scala ]
     then
       /usr/bin/wget https://downloads.lightbend.com/scala/2.11.11/scala-2.11.11.tgz 2>  /tmp/scala-dl-log.txt
       /bin/tar  -zxvf scala-2.11.11.tgz
-      /bin/ln  scala-2.11.11 scala
+      /bin/ln  /home/vagrant/scala-2.11.11 /home/vagrant/scala
 fi
 
 # sbt
