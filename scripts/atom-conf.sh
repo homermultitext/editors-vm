@@ -9,3 +9,5 @@ apm install tablr
 
 cd /vagrant/atomic-tei
 apm link
+
+cp /vagrant/system/atom-tablr-conf.cson /home/vagrant/.atom/config.cson

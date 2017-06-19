@@ -1,0 +1,12 @@
+  tablr:
+    csvEditor:
+      columnDelimiter: "#"
+      comment: "!#"
+      eof: true
+    supportedCsvExtensions: [
+      "csv"
+      "tsv"
+      "CSV"
+      "TSV"
+      "cex"
+    ]
