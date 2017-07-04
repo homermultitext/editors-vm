@@ -97,7 +97,7 @@ apt-get install sbt
 # Atom
 add-apt-repository ppa:webupd8team/atom
 apt update
-apt install atom
+apt install  -y  atom
 
 GIT=`which git`
 cd /vagrant
