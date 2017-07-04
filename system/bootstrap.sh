@@ -30,13 +30,11 @@ apt-get install -y openjdk-7-jdk
 apt-get -y install groovy
 apt-get -y install gradle
 
-# XML editor
-apt-get install -y xmlcopyeditor
 
 #########################################################
 ### Web
 apt-get -y install firefox
-## alpheios must be manually installed?
+## alpheios must be manually installed
 
 
 #########################################################
@@ -44,7 +42,6 @@ apt-get -y install firefox
 #########################################################
 
 apt-get -y install mdpress
-apt-get -y install retext
 apt-get -y install pandoc
 
 
@@ -73,22 +70,35 @@ cp /vagrant/system/plank-dock1-launchers/*.dockitem /home/vagrant/.config/plank/
 chown vagrant:vagrant /home/vagrant/.config/plank/dock1/launchers/*.dockitem
 
 
-if [ ! -e /usr/bin/atom ]
+#########################################################
+### Scala suite ###########
+#########################################################
+
+# scala itself:
+if [ ! -e /home/vagrant/scala ]
     then
-      # Add Atom:
-      echo "Downloading .deb file for Atom"
-      /usr/bin/wget https://github.com/atom/atom/releases/download/v1.0.11/atom-amd64.deb 2> /tmp/atom-log.txt
-      echo "Download complete, installing Atom"
-      /usr/bin/dpkg --install atom-amd64.deb
-      echo "Atom installed. "
+      /usr/bin/wget https://downloads.lightbend.com/scala/2.11.11/scala-2.11.11.tgz 2>  /tmp/scala-dl-log.txt
+      /bin/tar  -zxvf scala-2.11.11.tgz
+      /bin/ln  /home/vagrant/scala-2.11.11 /home/vagrant/scala
 fi
 
+# sbt
 
-if [ ! -e /usr/share/backgrounds/proclus-opening.jpg ]
-    then
-    echo "Downloading bg image of Venetus A MS"
-    /usr/bin/wget http://beta.hpcc.uh.edu/hmt/data/proclus-opening.jpg 2> /tmp/proclus-log.txt
-    /bin/mv proclus-opening.jpg /usr/share/backgrounds
-fi
 
-# http://downloads.lightbend.com/scala/2.11.7/scala-2.11.7.deb ?
+echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+apt-get update
+apt-get install sbt
+
+
+
+
+
+# Atom
+add-apt-repository ppa:webupd8team/atom
+apt update
+apt install  -y  atom
+
+GIT=`which git`
+cd /vagrant
+$GIT clone https://github.com/neelsmith/atomic-tei.git

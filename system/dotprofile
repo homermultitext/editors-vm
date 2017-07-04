@@ -1,4 +1,4 @@
 
-export PATH=/vagrant/scripts:$PATH
+export PATH=/home/vagrant/scala/bin:/vagrant/scripts:$PATH
 
 export EDITOR=/usr/bin/atom
