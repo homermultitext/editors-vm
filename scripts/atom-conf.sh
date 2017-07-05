@@ -6,6 +6,7 @@ apm install linter-ui-default
 apm install linter-autocomplete-jing
 apm install atom-xsltransform
 apm install tablr
+apm install xml-formatter
 
 cd /vagrant/atomic-tei
 apm link
