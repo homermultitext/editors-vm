@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "alexgleason/elementaryos-freya64"
+  config.vm.box = "TimWSpence/elementaryos"
   config.vm.provision :shell, :path => "system/bootstrap.sh"
 
   # Disable automatic box update checking. If you disable this, then

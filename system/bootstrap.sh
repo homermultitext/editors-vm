@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-#
-# Add repository for an early-21st-century version of gradle:
-add-apt-repository ppa:cwchien/gradle
+
 apt-get update
 
 
@@ -27,14 +25,12 @@ apt-get install -y git
 
 # JDK bundle
 apt-get install -y openjdk-7-jdk
-apt-get -y install groovy
-apt-get -y install gradle
+
 
 
 #########################################################
 ### Web
-apt-get -y install firefox
-## alpheios must be manually installed
+
 
 
 #########################################################
