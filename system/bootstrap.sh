@@ -13,18 +13,30 @@ apt-get install -y dos2unix
 /usr/bin/dos2unix /vagrant/system/dotprofile
 /usr/bin/dos2unix /vagrant/scripts/*sh
 
-# and add bomstrip utils in case XML Copy Editor
-# or evil Windows software tries to insert a BOM
-# in your editorial work:
+# and add bomstrip utils in case evil Windows software
+# tries to insert a BOM in your editorial work:
 apt-get install -y bomstrip
 
 # version control
 apt-get install -y git
 
 # JDK bundle
-apt-get install -y openjdk-7-jdk
+#apt-get install -y openjdk-7-jdk
+add-apt-repository -y ppa:webupd8team/java
+apt-get update
+apt-get -y upgrade
+echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+apt-get -y install oracle-java8-installer
+echo "Setting environment variables for Java 8.."
+apt-get install -y oracle-java8-set-default
 
 
+# sbt
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+apt-get update
+apt-get install -y sbt
 
 
 #########################################################
@@ -52,17 +64,13 @@ cp /vagrant/system/plank-dock1-launchers/*.dockitem /home/vagrant/.config/plank/
 chown vagrant:vagrant /home/vagrant/.config/plank/dock1/launchers/*.dockitem
 
 
-# sbt
-echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
-apt-get update
-apt-get install -y sbt
 
 # Atom
 curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 apt-get update
 apt install  -y  atom
+
 
 GIT=`which git`
 cd /vagrant
