@@ -8,7 +8,7 @@ This release of the HMT editors' virtual machine uses a free Linux operating sys
 
 ## Version
 
-The `master` branch of this repository contains current development work on the VM to be used at the HMT summer seminar at the Center for Hellenic Studies in the summer of 2017.
+The `master` branch of this repository contains current development work on the VM to be used at the HMT summer seminar at the Center for Hellenic Studies in the summer of 2018.
 
 ## Notes for docs
 

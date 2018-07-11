@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-#
-# Add repository for an early-21st-century version of gradle:
-add-apt-repository ppa:cwchien/gradle
-apt-get update
 
 
 #########################################################
@@ -27,8 +23,6 @@ apt-get install -y git
 
 # JDK bundle
 apt-get install -y openjdk-7-jdk
-apt-get -y install groovy
-apt-get -y install gradle
 
 
 #########################################################
@@ -70,33 +64,10 @@ cp /vagrant/system/plank-dock1-launchers/*.dockitem /home/vagrant/.config/plank/
 chown vagrant:vagrant /home/vagrant/.config/plank/dock1/launchers/*.dockitem
 
 
-#########################################################
-### Scala suite ###########
-#########################################################
-
-# scala itself:
-if [ ! -e /home/vagrant/scala ]
-    then
-      /usr/bin/wget https://downloads.lightbend.com/scala/2.11.11/scala-2.11.11.tgz 2>  /tmp/scala-dl-log.txt
-      /bin/tar  -zxvf scala-2.11.11.tgz
-      /bin/ln  /home/vagrant/scala-2.11.11 /home/vagrant/scala
-fi
-
 # sbt
-
-
-echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
-apt-get update
-apt-get install sbt
-
-
-
-
+apt-get install -y sbt
 
 # Atom
-add-apt-repository ppa:webupd8team/atom
-apt update
 apt install  -y  atom
 
 GIT=`which git`
